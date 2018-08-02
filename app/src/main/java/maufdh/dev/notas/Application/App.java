@@ -25,7 +25,7 @@ public class App extends Application {
         Toast.makeText(this, "ONCREATE APP", Toast.LENGTH_SHORT).show();
 
 
-        if(!checkIfCodeExists()){ //Quitar negacion ---solo fue un test
+        if(checkIfCodeExists()){ //Quitar negacion ---solo fue un test
             //redirect to code
             Toast.makeText(this, "CODEACTIVITY", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));

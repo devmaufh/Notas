@@ -3,6 +3,7 @@ package maufdh.dev.notas.Activities;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.poovam.pinedittextfield.CirclePinField;
@@ -18,6 +19,7 @@ public class CodeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_code);
+        setToolbar();
         pincode=(CirclePinField)findViewById(R.id.activityCode_pinCode);
         pincode.setOnTextCompleteListener(new PinField.OnTextCompleteListener() {
             @Override
@@ -32,5 +34,10 @@ public class CodeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_code); //Muestra el toolbar como ActionBar
+        setSupportActionBar(toolbar);//Muestra titulo de toolbar
     }
 }
