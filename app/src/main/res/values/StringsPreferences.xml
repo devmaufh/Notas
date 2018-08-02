@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config">Configuración</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="contraseña_acceso">Contraseña de acceso</string>3
+    <string name="comtraseña_dialog">Ingresa un código de acceso</string>
+    <string name="sync_check">Activar sincronización</string>
+    <string name="sync_check_descp">Sincronizar notas con en la nube</string>
+    <string name="select_tema">Tema</string>
+    <string name="Selecciona_tema">Selecciona un tema para la aplicación</string>
+
+    <string-array name="list_temas">
+        <item>Default</item>
+        <item>Oscuro</item>
+        <item>Rainbown</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>

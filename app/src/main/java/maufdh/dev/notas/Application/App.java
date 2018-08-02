@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import maufdh.dev.notas.Activities.CodeActivity;
@@ -23,19 +24,15 @@ public class App extends Application {
         prefs=getApplicationContext().getSharedPreferences("prefs",MODE_PRIVATE);
         sqlInstance = new Notesdb(getApplicationContext(),"notesdb",null,1).getWritableDatabase();
         Toast.makeText(this, "ONCREATE APP", Toast.LENGTH_SHORT).show();
+        if(!checkPass()){
+            startActivity(new Intent(getApplicationContext(),CodeActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
-
-        if(checkIfCodeExists()){ //Quitar negacion ---solo fue un test
-            //redirect to code
-            Toast.makeText(this, "CODEACTIVITY", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }else{
-            Toast.makeText(this, "MAIN", Toast.LENGTH_SHORT).show();
-
-            startActivity(new Intent(getApplicationContext(), CodeActivity.class));
+            //Home
+            startActivity(new Intent(getApplicationContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
-    public boolean checkIfCodeExists(){
-        return prefs.getString("code","null").equals("null");
+    private boolean checkPass(){
+        return TextUtils.isEmpty(prefs.getString("contraseña_preferences",""));
     }
 }

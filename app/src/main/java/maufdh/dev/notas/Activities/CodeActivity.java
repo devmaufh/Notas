@@ -1,5 +1,6 @@
 package maufdh.dev.notas.Activities;
 
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,11 +25,10 @@ public class CodeActivity extends AppCompatActivity {
         pincode.setOnTextCompleteListener(new PinField.OnTextCompleteListener() {
             @Override
             public void onTextComplete(String s) {
-                if(s.equals(App.prefs.getString("code","null")))
+                if(s.equals(App.prefs.getString("contraseña_preferences","null")))
                 {
-                    Snackbar.make(getWindow().getDecorView().getRootView(),"Código correct",Snackbar.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 }else{
-                    //Incorrect
                     Snackbar.make(getWindow().getDecorView().getRootView(),"Código incorrecto",Snackbar.LENGTH_SHORT).show();
                 }
             }

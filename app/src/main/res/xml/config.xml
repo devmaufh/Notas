@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/config"
+        />
+    <EditTextPreference
+        android:dialogTitle="@string/comtraseña_dialog"
+        android:key="contraseña_preferences"
+        android:summary="@string/contraseña_acceso"
+        android:title="@string/contraseña" />
+    <CheckBoxPreference
+        android:key="synccheck_preference"
+        android:title="@string/sync_check"
+        android:summary="@string/sync_check_descp" />
+    <ListPreference
+        android:key="list_preference"
+        android:title="@string/select_tema"
+        android:summary="@string/Selecciona_tema"
+        android:entries="@array/list_temas"
+        android:entryValues="@array/list_preference_entry_values"
+        android:dialogTitle="@string/select_tema" />
+</PreferenceScreen>
