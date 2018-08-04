@@ -7,6 +7,10 @@
     <string name="exit">Salir</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="titulo">Titulo</string>
+    <string name="descripcion">Descripción</string>
+    <string name="pick_color">Selecciona un color</string>
+    <string name="save">Guardar</string>
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
@@ -52,7 +56,6 @@
         <item>360</item>
         <item>-1</item>
     </string-array>
-
 
 
     <string-array name="multi_select_list_preference_default_value" />
